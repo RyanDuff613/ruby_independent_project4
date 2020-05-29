@@ -17,6 +17,7 @@ class ReviewsController < ApplicationController
       redirect_to product_path(@product)
     else 
       render :new
+    end
   end
 
   def edit
@@ -26,7 +27,7 @@ class ReviewsController < ApplicationController
   end
 
   def show
-    @product = Product.find(params[:album_id])
+    @product = Product.find(params[:product_id])
     @review = Review.find(params[:id])
     render :show
   end
