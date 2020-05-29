@@ -5,14 +5,33 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+
+# -----Attempts to seed db using faker ------
 require('faker')
 
-Food.destroy_all
+Product.destroy_all
 
 50.times do |index|
-  Food.create!(name: Faker::Food.ingredient,
+  Product.create!(name: Faker::Food.ingredient,
                         country_of_origin: Faker::Nation.nationality,
-                        cost: Faker::Number.decimal(digits: 2))
+                        cost: Faker::Number.number(digits: 2))
 end
 
-p "Created #{Food.count} Products"
+p "Created #{Product.count} Products"
+
+
+# -------------Seed manually -------------
+
+# product_list = [
+#   [ "Oak", "Quercus" ],
+#   [ "Pine", "Pinus" ],
+#   [ "Sycamore", "Platanus" ],
+#   [ "Alder", "Alnus" ],
+#   [ "Birch", "Betula"],
+#   [ "Cherry", "Prunus"]
+# ]
+
+# product_list.each do |name, country, cost|
+#   Product.create( common_name: common, latin_name: latin )
+# end
