@@ -4,6 +4,22 @@
 
 <hr>
 
+
+<% if @product.reviews.any? %>
+  <h4>This products has been reviewed by:</h4>
+
+  <% @product.reviews.each do |song| %>
+    <ul>
+      <li>
+        <%= link_to review.author, product_review_path(@product, review) %>
+      </li>
+    </ul>
+  <% end %>
+<% else %>
+  <p>No current reviews for <%= @product.name %></p>
+<% end %>
+
+
 <p><%= link_to "Edit this product", edit_product_path(@product) %></p>
 <p><%= link_to "Delete this product from inventory", product_path(@product),
                          :data => {:confirm => "You sure?",
