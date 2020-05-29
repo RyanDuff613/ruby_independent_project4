@@ -17,7 +17,7 @@ Review.destroy_all
   Product.create!(name: Faker::Food.ingredient,
                   country_of_origin: Faker::Nation.nationality,
                   cost: Faker::Number.number(digits: 2))
-    # 50.times do |index|
+    # 5.times do |index|
     #   Review.create!(author: Faker::Name.name,
     #                  rating:Faker::Number.within(range: 1..5),
     #                  product_id:Faker::Number.within(range: 1..50),
