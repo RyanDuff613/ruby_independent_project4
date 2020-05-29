@@ -11,27 +11,20 @@
 require('faker')
 
 Product.destroy_all
+Review.destroy_all
 
 50.times do |index|
   Product.create!(name: Faker::Food.ingredient,
-                        country_of_origin: Faker::Nation.nationality,
-                        cost: Faker::Number.number(digits: 2))
+                  country_of_origin: Faker::Nation.nationality,
+                  cost: Faker::Number.number(digits: 2))
+    # 50.times do |index|
+    #   Review.create!(author: Faker::Name.name,
+    #                  rating:Faker::Number.within(range: 1..5),
+    #                  product_id:Faker::Number.within(range: 1..50),
+    #                  content_body:Faker::Lorem.sentence(word_count: 20))
+    # end
 end
 
 p "Created #{Product.count} Products"
+# p "Created #{Review.count} Reviews"
 
-
-# -------------Seed manually -------------
-
-# product_list = [
-#   [ "Oak", "Quercus" ],
-#   [ "Pine", "Pinus" ],
-#   [ "Sycamore", "Platanus" ],
-#   [ "Alder", "Alnus" ],
-#   [ "Birch", "Betula"],
-#   [ "Cherry", "Prunus"]
-# ]
-
-# product_list.each do |name, country, cost|
-#   Product.create( common_name: common, latin_name: latin )
-# end
