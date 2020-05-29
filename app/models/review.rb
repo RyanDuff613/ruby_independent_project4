@@ -5,4 +5,7 @@ class Review < ApplicationRecord
   validates :rating, presence: true
   validates_length_of :content_body, maximum: 250
   validates_length_of :content_body, minimum: 50
+  validates :rating, numericality: {only_integer: true}
+  validates :rating, numericality: {greater_than: 0}
+  validates :rating, numericality: {less_than: 5}
 end
