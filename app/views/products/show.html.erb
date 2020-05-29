@@ -22,6 +22,6 @@
 <p><%= link_to "Review this product", new_product_review_path(@product) %></p>
 <p><%= link_to "Edit this product", edit_product_path(@product) %></p>
 <p><%= link_to "Delete this product from inventory", product_path(@product),
-                         :data => {:confirm => "You sure?",
-                                   :method => "delete"} %></p>
+                                                      :data => {:confirm => "Confirm to Delete Product from Inventory",
+                                                      :method => "delete"} %></p>
 <p><%= link_to "Return to Inventory", products_path %></p>
