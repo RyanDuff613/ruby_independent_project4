@@ -1,6 +1,8 @@
 <h1><%= @product.name %></h1>
-<h3><%= @product.country_of_origin %></h3>
-<h3><%= @product.cost %></h3>
+<h4>Origin: <%= @product.country_of_origin %></h4>
+<h4>Price: $ <%= @product.cost %></h4>
+
+<hr>
 
 <p><%= link_to "Edit this product", edit_product_path(@product) %></p>
 <p><%= link_to "Delete this product from inventory", product_path(@product),
