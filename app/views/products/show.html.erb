@@ -20,10 +20,15 @@
 <% end %>
 
 <hr>
-
-<button><%= link_to "Review this product", new_product_review_path(@product) %></button>
-<button><%= link_to "Edit this product", edit_product_path(@product) %></button>
+<form method="get" action="/products/<%= @product.id %>/reviews/new">
+  <button>Review this Product</button>
+</form>
+<form method="get" action="/products/<%= @product.id %>/edit">
+  <button>Edit this Product</button>
+</form>
 <button><%= link_to "Delete this product from inventory", product_path(@product),
                                                                       :data => {:confirm => "Confirm to Delete Product from Inventory",
                                                                       :method => "delete"} %></button>
-<button><%= link_to "Return to Inventory", products_path %></button>
+<form method="get" action="/products">
+  <button>Return To Inventory</button>
+</form>
