@@ -10,15 +10,26 @@ This project is a browser based application that allows users to view food produ
 
 
 ## Setup/Installation Requirements
-Users will need to have Ruby and Rails installed on their local machines. [See Here](https://www.tutorialspoint.com/ruby-on-rails/rails-installation.htm) for more info on installing these.
-Users will need to clone the project from my [github repository](https://github.com/RyanDuff613/ruby_independent_project4.git). Once cloned, open a Terminal window and enter "$ rails server" on the command line. This lauches a server at localhost:3000. Open a browser window and enter localhost:3000 in the address bar to view the landing page.
+Users will need to install Ruby, Rails, psql and Postgres.
+[Click here](https://www.ruby-lang.org/en/documentation/installation/) for instructions on installing Ruby.
+[Click here](https://dataschool.com/learn-sql/how-to-start-a-postgresql-server-on-mac-os-x/) for instructions on installing psql and Postgres.
+After installing the above software, users will need to clone this project from my [github repository](https://github.com/RyanDuff613/ruby_independent_project4.git). Once cloned, use the command line to navigate to the project folder and install all necessary Ruby Gems with: 
+* _$ bundle install_
+In the command line, type the following commands which will launch a postgres server, connect to the server via psql and create the database necessary for the app to function and launch a server for interacting with the app.
+* _$ pg_ctl -D /usr/local/var/postgres start_
+* _$ psql postgres_
+* _$ createdb ruby_independent_project4_development_
+* _$ psql ruby_independent_project4_development < database_backup.sql_
+* _$ -T ruby_independent_project4_development volunteer_tracker_test_
+* _$ exit_
+Now open a web browser and enter localhost:3000 in the address bar to view the project.
 
 
 ## Specifications
 
 | Behavior       | Input         | Output  |
 | :--- |:---| :---|
-|Application will display a landing page with a list of the three most recently added products, the most reviewed product and links to other areas of the site for adding, deleting and editing both products and reviews.|Launch Server > navigate to localhost:3000|Display landing page|
+|Application will display a landing page with a list of the three most recently added products, a list of products sourced from Mexico and a link to the full list of available products.|Launch Server > navigate to localhost:3000|Display landing page|
 |Application will allow users to click on a link and be taken to a list of available products| *click on "See all available products" | Browser displays a list of all products.|
 |Application will allow user to add a product. |*click on "Add Product" |Browser displays page allowing user to add product.|
 |Application will allow user to see details for individual products.|*click on "Product A" | Browser displays product page.|
