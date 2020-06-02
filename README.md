@@ -61,7 +61,8 @@ Now open a web browser and enter localhost:3000 in the address bar to view the p
 
 ## Known Bugs
 
-
+If user enters a product cost with a "0" in the hundrenths position, the "0" is dropped from the cost. 
+Ex. User Entered Cost:$2.30, Cost in Database: $2.3
 
 ### License
 
