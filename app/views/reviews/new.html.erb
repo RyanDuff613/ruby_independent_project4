@@ -1,4 +1,4 @@
-<h1>Review <%= @product.name %>: </h1>
+<h1>Add a Review for:<%= @product.name %>: </h1>
 
 <%= form_for [@product, @review] do |f| %>
   <%= f.label :author %><span>:</span>

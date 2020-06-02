@@ -5,20 +5,30 @@
   <h4>Our Newest Items:</h4>
     <ul>
       <% @newest_3.each do |item| %>
-      <li><button><a href="/products/<%= item.id %>"><%= item.name %></a></button></li>
+      <li><form method="get" action="/products/<%= item.id %>">
+            <button><%= item.name %></button>
+          </form>
+      </li>
       <% end %>
     </ul>
 <% else %>
   <h4>No New Items to Display</h4>
 <% end %>
+
 <br>
+
 <% if @from_mexico.any? %>
   <h4>Items from Mexico:</h4>
     <ul>
       <% @from_mexico.each do |item| %>
-      <li><button><a href="/products/<%= item.id %>"><%= item.name %></a></button></li>
+      <li><form method="get" action="/products/<%= item.id %>">
+            <button><%= item.name %></button>
+          </form>
+      </li>
       <% end %>
     </ul>
 <% end %>
 
-<button><%= link_to "See all our products", products_path %></button>
+<form method="get" action="/products">
+  <button>See all our Products</button>
+</form>
