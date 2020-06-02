@@ -7,7 +7,7 @@ class Review < ApplicationRecord
   validates_length_of :content_body, minimum: 50
   validates :rating, numericality: {only_integer: true}
   validates :rating, numericality: {greater_than: 0}
-  validates :rating, numericality: {less_than: 5}
+  validates :rating, numericality: {less_than: 6}
 
   before_save(:titleize_author_name)
 
