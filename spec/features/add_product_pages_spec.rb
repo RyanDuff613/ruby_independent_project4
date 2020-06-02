@@ -27,10 +27,10 @@ describe "add review process" do
     fill_in "Cost", :with => 2.31
     click_on "Create Product"
     click_on "Kale - $2.31"
-    click_on "Review this product"
+    click_on "Review this Product"
     fill_in "Author", :with => "Tammy"
     fill_in "Rating", :with => 4
-    fill_in "Comments", :with => "adsaf asdf asdf asdf asdf asdf asdf asdf"
+    fill_in "Comments", :with => "adsaf asd fasdf asd f asdf asdf  f asdf asdf asdf asdf asdf asdf asdf asdf"
     click_on "Create Review"
     expect(page).to have_content "Thanks for adding your review"
     expect(page).to have_content "Tammy"
