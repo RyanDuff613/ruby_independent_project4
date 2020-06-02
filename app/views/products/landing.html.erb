@@ -11,5 +11,14 @@
 <% else %>
   <h4>No New Items to Display</h4>
 <% end %>
+<br>
+<% if @from_mexico.any? %>
+  <h4>Items from Mexico:</h4>
+    <ul>
+      <% @from_mexico.each do |item| %>
+      <li><button><a href="/products/<%= item.id %>"><%= item.name %></a></button></li>
+      <% end %>
+    </ul>
+<% end %>
 
 <button><%= link_to "See all our products", products_path %></button>

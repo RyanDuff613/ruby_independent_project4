@@ -5,6 +5,7 @@ class Product < ApplicationRecord
   validates :cost, presence: true
   validates :cost, numericality: true
   scope :newest_3, -> {order(created_at: :desc).limit(3)}
+  scope :from_mexico, -> {where(country_of_origin: "Mexico")}
 
   before_save(:titleize_product)
 

@@ -2,6 +2,7 @@ class ProductsController < ApplicationController
 
   def landing
     @newest_3 = Product.newest_3
+    @from_mexico = Product.from_mexico
     render :landing
   end
 

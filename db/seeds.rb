@@ -15,14 +15,14 @@ Review.destroy_all
 
 50.times do |index|
   @product = Product.create!(name: Faker::Food.ingredient,
-                  country_of_origin: Faker::WorldCup.team,
-                  cost: Faker::Number.decimal(l_digits: 2, r_digits: 2))
-                  5.times do |index|
-                    Review.create!(author: Faker::Name.name,
-                                   rating:Faker::Number.within(range: 1..5),
-                                   product_id: @product.id,
-                                   content_body:Faker::Lorem.sentence(word_count: 20))
-                  end
+                             country_of_origin: Faker::WorldCup.team,
+                             cost: Faker::Number.decimal(l_digits: 2, r_digits: 2))
+              5.times do |index|
+                Review.create!(author: Faker::Name.name,
+                               rating:Faker::Number.within(range: 1..5),
+                               product_id: @product.id,
+                               content_body:Faker::Lorem.sentence(word_count: 20))
+              end
 end
 
 
