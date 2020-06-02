@@ -24,9 +24,9 @@ describe "add review process" do
     click_link 'Add new product to inventory'
     fill_in "Name", :with => "kale"
     fill_in "Country of origin", :with => "italy"
-    fill_in "Cost", :with => 2.30
+    fill_in "Cost", :with => 2.31
     click_on "Create Product"
-    click_on "Kale - $2.3"
+    click_on "Kale - $2.31"
     click_on "Review this product"
     fill_in "Author", :with => "Tammy"
     fill_in "Rating", :with => 4
