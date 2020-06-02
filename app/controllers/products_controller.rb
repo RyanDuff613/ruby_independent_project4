@@ -19,8 +19,10 @@ class ProductsController < ApplicationController
   def create
     @product = Product.new(product_params)
     if @product.save
+      flash[:notice] = "Product Successfully Added to Inventory"
       redirect_to products_path
     else
+      flash[:notice] = "Product Not Added, All data must be entered in the form correctly."
       render :new
     end
   end

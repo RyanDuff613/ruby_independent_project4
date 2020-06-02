@@ -10,8 +10,10 @@ class ReviewsController < ApplicationController
     @product = Product.find(params[:product_id])
     @review = @product.reviews.new(review_params)
     if @review.save
+      flash[:notice] = "Thanks for adding your review"
       redirect_to product_path(@product)
     else 
+      flash[:notice] = "Please fill in all form data correctly to add review"
       render :new
     end
   end
