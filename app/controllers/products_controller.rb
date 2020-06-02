@@ -1,6 +1,7 @@
 class ProductsController < ApplicationController
 
   def landing
+    @newest_3 = Product.newest_3
     render :landing
   end
 

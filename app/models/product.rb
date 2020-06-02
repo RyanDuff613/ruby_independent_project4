@@ -4,6 +4,7 @@ class Product < ApplicationRecord
   validates :country_of_origin, presence: true
   validates :cost, presence: true
   validates :cost, numericality: true
+  scope :newest_3, -> {order(created_at: :desc).limit(3)}
 
   before_save(:titleize_product)
 

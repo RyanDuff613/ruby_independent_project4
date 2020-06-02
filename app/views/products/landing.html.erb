@@ -1,6 +1,15 @@
 <h1>Welcome to Mario's</h1>
 <h1>Your source for world class food.</h1>
 
-
+<% if @newest_3.any? %>
+  <h4>Our Newest Items:</h4>
+    <ul>
+      <% @newest_3.each do |item| %>
+      <li><button><a href="/products/<%= item.id %>"><%= item.name %></a></button></li>
+      <% end %>
+    </ul>
+<% else %>
+  <h4>No New Items to Display</h4>
+<% end %>
 
 <button><%= link_to "See all our products", products_path %></button>
