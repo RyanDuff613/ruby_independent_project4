@@ -18,6 +18,23 @@ describe "the add product process" do
   end
 end
 
+describe "update product process" do 
+  it "updates a product price" do
+    visit products_path
+    click_link 'Add new product to inventory'
+    fill_in "Name", :with => "kale"
+    fill_in "Country of origin", :with => "italy"
+    fill_in "Cost", :with => 2.31
+    click_on "Create Product"
+    visit products_path
+    click_on "Kale - $2.31"
+    click_on "Edit this Product"
+    fill_in "Cost", :with => 5.11
+    click_on "Update Product"
+    expect(page).to have_content "Kale - $5.11"
+  end
+end
+
 describe "add review process" do
   it "adds a new review" do
     visit products_path
@@ -29,8 +46,8 @@ describe "add review process" do
     click_on "Kale - $2.31"
     click_on "Review this Product"
     fill_in "Author", :with => "Tammy"
-    fill_in "Rating", :with => 4
-    fill_in "Comments", :with => "adsaf asd fasdf asd f asdf asdf  f asdf asdf asdf asdf asdf asdf asdf asdf"
+    fill_in "Rating", :with => 4 
+    fill_in "content_body", :with => "Impedit sed ea incidunt tenetur placeat est labore quia ut et animi nostrum commodi mollitia dolores beatae et ducimus nobis."
     click_on "Create Review"
     expect(page).to have_content "Thanks for adding your review"
     expect(page).to have_content "Tammy"

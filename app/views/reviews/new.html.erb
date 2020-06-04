@@ -1,13 +1,13 @@
 <h1>Add a Review for:<%= @product.name %>: </h1>
 
 <%= form_for [@product, @review] do |f| %>
-  <%= f.label :author %><span>:</span>
+  <%= f.label :author<span>:</span> %>
   <%= f.text_field :author %>
   <br>
   <%= f.label :rating %><span>(number from 1-5):</span>
   <%= f.text_field :rating %>
   <br>
-  <%= f.label :comments %><span>(min 50 characters, max 250):</span>
+  <%= f.label :content_body %><span>(min 50 characters, max 250):</span>
   <%= f.text_area :content_body %>
   <br>
   <p><%= f.submit %></p>
