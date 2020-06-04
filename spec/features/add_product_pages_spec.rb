@@ -35,6 +35,22 @@ describe "update product process" do
   end
 end
 
+describe "delete product process" do
+  it "deletes a product from inventory"do
+    visit products_path
+    click_link 'Add new product to inventory'
+    fill_in "Name", :with => "kale"
+    fill_in "Country of origin", :with => "italy"
+    fill_in "Cost", :with => 2.31
+    click_on "Create Product"
+    visit products_path
+    click_on "Kale - $2.31"
+    click_on "Delete this product from inventory"
+    expect(page).not_to have_content "Kale - $2.31"
+  end
+end
+
+
 describe "add review process" do
   it "adds a new review" do
     visit products_path

@@ -26,9 +26,8 @@
 <form method="get" action="/products/<%= @product.id %>/edit">
   <button>Edit this Product</button>
 </form>
-<button><%= link_to "Delete this product from inventory", product_path(@product),
-                                                                      :data => {:confirm => "Confirm to Delete Product from Inventory",
-                                                                      :method => "delete"} %></button>
+<%= link_to "Delete this product from inventory", product_path(@product),
+                                                                      :data => { :method => "delete"} %>
 <form method="get" action="/products">
   <button>Return To Inventory</button>
 </form>
