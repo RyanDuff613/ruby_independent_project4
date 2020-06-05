@@ -29,27 +29,26 @@ describe "update product process" do
     visit products_path
     click_link "Kale - $2.31"
     click_link "Edit this Product"
-    save_and_open_page
     fill_in "Cost", :with => 5.11
     click_on "Update Product"
     expect(page).to have_content "Kale - $5.11"
   end
 end
 
-# describe "delete product process" do
-#   it "deletes a product from inventory"do
-#     visit products_path
-#     click_link 'Add new product to inventory'
-#     fill_in "Name", :with => "kale"
-#     fill_in "Country of origin", :with => "italy"
-#     fill_in "Cost", :with => 2.31
-#     click_on "Create Product"
-#     visit products_path
-#     click_button "Kale - $2.31"
-#     click_on "Delete From Inventory"
-#     expect(page).not_to have_content "Kale - $2.31"
-#   end
-# end
+describe "delete product process" do
+  it "deletes a product from inventory"do
+  visit products_path
+  click_link 'Add new product to inventory'
+  fill_in "Name", :with => "kale"
+  fill_in "Country of origin", :with => "italy"
+  fill_in "Cost", :with => 2.31
+  click_on "Create Product"
+  visit products_path
+  click_link "Kale - $2.31"
+  click_on "Delete From Inventory"
+  expect(page).not_to have_content "Kale - $2.31"
+  end
+end
 
 # describe "add review process" do
 #   it "adds a new review" do
