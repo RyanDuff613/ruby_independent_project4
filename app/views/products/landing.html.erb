@@ -5,9 +5,8 @@
   <h4>Our Newest Items:</h4>
     <ul>
       <% @newest_3.each do |item| %>
-      <li><form method="get" action="/products/<%= item.id %>">
-            <button><%= item.name %></button>
-          </form>
+      <li>
+          <a href="/products/<%= item.id %>"><button><%= item.name %></button></a>
       </li>
       <% end %>
     </ul>
@@ -21,14 +20,12 @@
   <h4>Items from Mexico:</h4>
     <ul>
       <% @from_mexico.each do |item| %>
-      <li><form method="get" action="/products/<%= item.id %>">
-            <button><%= item.name %></button>
-          </form>
+      <li>
+          <a href="/products/<%= item.id %>"><button><%= item.name %></button></a>
       </li>
       <% end %>
     </ul>
 <% end %>
 
-<form method="get" action="/products">
-  <button>See all our Products</button>
-</form>
+  <a href="/products"><button>See all our Products</button></a>
+

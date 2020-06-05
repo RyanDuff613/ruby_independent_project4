@@ -15,8 +15,9 @@ Users will need to install Ruby, Rails, psql and Postgres.
 [Click here](https://dataschool.com/learn-sql/how-to-start-a-postgresql-server-on-mac-os-x/) for instructions on installing psql and Postgres.
 After installing the above software, users will need to clone this project from my [github repository](https://github.com/RyanDuff613/ruby_independent_project4.git). Once cloned, use the command line to navigate to the project folder and install all necessary Ruby Gems with: 
 * _$ bundle install_
-In the command line, type the following commands which will launch a postgres server, connect to the server via psql and create the database necessary for the app to function and launch a server for interacting with the app.
-
+In the command line, type the following commands which will 
+* _$ rake db:create 
+* _$ rails s
 Now open a web browser and enter localhost:3000 in the address bar to view the project.
 
 
@@ -36,11 +37,11 @@ Now open a web browser and enter localhost:3000 in the address bar to view the p
 ## User Stories Employed to Determine Behavior Driven Development Strategy
 
 * As an admin I want to see a list of all available items.
-* As an admin I want to be able to click on an item and see it's details.
-* As an admin I want to be able to edit a product's details.
-* As an admin I want to be able to add and delete products.
-* As a consumer I want to see all product's available and have access to user reviews.
-* As a consumer I want to add my own reviews for products I've purchased.
+* As an admin, I should be able to log in and log out of the application.
+* As an admin, I should be able to add, update and delete products.
+* As an admin, I should be able to add reviews.
+* As an admin, I want to ensure that other users don't have access to CRUD functionality.
+* As a user, I want to be able to create an account and add a review to a product.
 
 ## Technologies Used
 * _Ruby_
