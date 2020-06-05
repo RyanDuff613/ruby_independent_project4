@@ -13,3 +13,28 @@
  *= require_tree .
  *= require_self
  */
+
+ #navbarHolder {
+  list-style-type: none;
+  background-color: grey;
+  margin: 0;
+  padding: 0;
+  display: inline;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.navbarItem a {
+  float: left;
+  display: block;
+  color: white;
+  margin: 5;
+  padding: 5;
+  text-align: center;
+  padding: 14px 16px;
+}
+
+.navbarItem a:hover{
+  background-color: rgb(248, 3, 3);
+}
