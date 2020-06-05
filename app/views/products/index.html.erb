@@ -3,9 +3,8 @@
 <% if @products.any? %>
   <ul>
     <% @products.each do |product| %>
-      <li><form method="get" action="/products/<%= product.id %>">
-            <button><%= product.name %><span> - $<%= product.cost %></span></button>
-          </form>
+      <li>
+          <a href="/products/<%= product.id %>"><button><%= product.name %> - $<%= product.cost %></button></a>
       </li>
     <% end %>
   </ul>
@@ -14,4 +13,4 @@
 <% end %>
 
 
-<p><%= link_to "Add new product to inventory", new_product_path %></p>
+<a href="/products/new"><button>Add new product to inventory</button></a>
