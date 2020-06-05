@@ -1,4 +1,8 @@
 class ProductsController < ApplicationController
+  before_action :authorize, only: [:secret]
+
+  def secret
+  end
 
   def landing
     @newest_3 = Product.newest_3

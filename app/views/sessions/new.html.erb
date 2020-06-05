@@ -1,8 +1,10 @@
 <h4>Sign in</h4>
-<% form_tag signin_path do %>
+<%= form_tag signin_path do %>
   <%= label_tag :email %>
   <%= text_field_tag :email %>
+  <br>
   <%= label_tag :password %>
   <%= password_field_tag :password %>
-  <%= submit_tag "Sign In" %>
-<%= end %>
+  <br>
+  <button type="submit">Sign in as Admin</button>
+<% end %>

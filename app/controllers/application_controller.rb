@@ -6,5 +6,13 @@ class ApplicationController < ActionController::Base
     if session[:user_id]
       @current_user ||= User.find(session[:user_id])
     end
+  end
+
+  def authorize
+    if !current_user
+      flash[:alert] = "Restricted. Access available only to Admins"
+      redirect_to '/'
+    end
+  end
 
 end
