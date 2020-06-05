@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
 
   def authorize
     if !current_user
-      flash[:alert] = "Restricted. Only Admins are permitted to manage inventory"
+      flash[:alert] = "Restricted. Admin only"
       redirect_to '/'
     end
   end
