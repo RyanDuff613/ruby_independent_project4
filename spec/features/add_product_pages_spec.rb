@@ -14,6 +14,27 @@ describe "the add product process" do
   it "gives error when no name is entered" do
     visit new_product_path
     click_on 'Create Product'
+    fill_in "Country of origin", :with => "italy"
+    fill_in "Cost", :with => 2.30
+    click_on "Create Product"
+    expect(page).to have_content "Product Not Added, All data must be entered in the form correctly."
+  end
+
+  it "gives error when no country of origin is entered" do
+    visit new_product_path
+    click_on 'Create Product'
+    fill_in "Name", :with => "onions"
+    fill_in "Cost", :with => 2.30
+    click_on "Create Product"
+    expect(page).to have_content "Product Not Added, All data must be entered in the form correctly."
+  end
+
+  it "gives error when no price is entered" do
+    visit new_product_path
+    click_on 'Create Product'
+    fill_in "Name", :with => "onions"
+    fill_in "Country of origin", :with => "italy"
+    click_on "Create Product"
     expect(page).to have_content "Product Not Added, All data must be entered in the form correctly."
   end
 end
