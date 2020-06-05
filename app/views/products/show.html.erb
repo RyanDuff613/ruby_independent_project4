@@ -23,7 +23,7 @@
 
 <a href="/products/<%= @product.id %>/reviews/new"><button>Add Review for this Product</button></a>
 <br>
-<a href="/products/<%= @product.id %>/edit"><button>Edit this Product</button></a>
+<a href="/products/<%= @product.id %>/edit"><button name="edit">Edit this Product</button></a>
 <br>
 <%=button_to 'Delete From Inventory', {:controller => :products, :action => 'destroy', :id => @product.id }, :method => :delete%>
 <br>

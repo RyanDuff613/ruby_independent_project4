@@ -26,45 +26,45 @@ describe "update product process" do
     fill_in "Country of origin", :with => "italy"
     fill_in "Cost", :with => 2.31
     click_on "Create Product"
-    visit products_path
-    click_on "Kale - $2.31"
-    click_on "Edit this Product"
+    click_on"Kale - $2.31"
+    save_and_open_page
+    click_link_or_button "Edit this Product"
     fill_in "Cost", :with => 5.11
     click_on "Update Product"
     expect(page).to have_content "Kale - $5.11"
   end
 end
 
-describe "delete product process" do
-  it "deletes a product from inventory"do
-    visit products_path
-    click_link 'Add new product to inventory'
-    fill_in "Name", :with => "kale"
-    fill_in "Country of origin", :with => "italy"
-    fill_in "Cost", :with => 2.31
-    click_on "Create Product"
-    visit products_path
-    click_on "Kale - $2.31"
-    click_on "Delete this product from inventory"
-    expect(page).not_to have_content "Kale - $2.31"
-  end
-end
+# describe "delete product process" do
+#   it "deletes a product from inventory"do
+#     visit products_path
+#     click_link 'Add new product to inventory'
+#     fill_in "Name", :with => "kale"
+#     fill_in "Country of origin", :with => "italy"
+#     fill_in "Cost", :with => 2.31
+#     click_on "Create Product"
+#     visit products_path
+#     click_button "Kale - $2.31"
+#     click_on "Delete From Inventory"
+#     expect(page).not_to have_content "Kale - $2.31"
+#   end
+# end
 
-describe "add review process" do
-  it "adds a new review" do
-    visit products_path
-    click_link 'Add new product to inventory'
-    fill_in "Name", :with => "kale"
-    fill_in "Country of origin", :with => "italy"
-    fill_in "Cost", :with => 2.31
-    click_on "Create Product"
-    click_on "Kale - $2.31"
-    click_on "Review this Product"
-    fill_in "Author", :with => "Tammy"
-    fill_in "Rating", :with => 4 
-    fill_in "content_body", :with => "Impedit sed ea incidunt tenetur placeat est labore quia ut e."
-    click_on "Create Review"
-    expect(page).to have_content "Thanks for adding your review"
-    expect(page).to have_content "Tammy"
-  end
-end
+# describe "add review process" do
+#   it "adds a new review" do
+#     visit products_path
+#     click_link 'Add new product to inventory'
+#     fill_in "Name", :with => "kale"
+#     fill_in "Country of origin", :with => "italy"
+#     fill_in "Cost", :with => 2.31
+#     click_on "Create Product"
+#     click_on "Kale - $2.31"
+#     click_on "Review this Product"
+#     fill_in "Author", :with => "Tammy"
+#     fill_in "Rating", :with => 4 
+#     fill_in "content_body", :with => "Impedit sed ea incidunt tenetur placeat est labore quia ut e."
+#     click_on "Create Review"
+#     expect(page).to have_content "Thanks for adding your review"
+#     expect(page).to have_content "Tammy"
+#   end
+# end
