@@ -9,8 +9,6 @@
 
 <hr>
 <br>
-
-<button><%= link_to "Delete review", product_review_path(@product, @review),
-                                                    :data => {:confirm => "Confirm to Delete",
-                                                              :method => "delete"} %></p></button>
-<button><a href="/products/<%= @product.id %>">Return to <%= @product.name %> Page</a></p></button>
+<%= button_to 'Delete this review', {:controller => :reviews, :action => 'destroy', :id => @review.id }, :method => :delete %>
+<br>
+<a href="/products/<%= @product.id %>"><button>Return to <%= @product.name %> Page</button></a>
