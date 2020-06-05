@@ -83,7 +83,7 @@ describe "add review process" do
     click_link "Add Review for this Product"
     fill_in "Author", :with => "Tammy"
     fill_in "Rating", :with => 4 
-    fill_in "Content body", :with => "Impedit sed ea incidunt tenetur placeat est labore quia ut e."
+    fill_in "Comments", :with => "Impedit sed ea incidunt tenetur placeat est labore quia ut e."
     click_on "Create Review"
     expect(page).to have_content "Thanks for adding your review"
     expect(page).to have_content "Tammy"
@@ -100,7 +100,7 @@ describe "add review process" do
     click_link "Kale - $2.31"
     click_link "Add Review for this Product"
     fill_in "Rating", :with => 4 
-    fill_in "Content body", :with => "Impedit sed ea incidunt tenetur placeat est labore quia ut e."
+    fill_in "Comments", :with => "Impedit sed ea incidunt tenetur placeat est labore quia ut e."
     click_on "Create Review"
     expect(page).to have_content "Please fill in all form data correctly to add review"
   end
@@ -116,7 +116,7 @@ describe "add review process" do
     click_link "Kale - $2.31"
     click_link "Add Review for this Product"
     fill_in "Author", :with => "Tammy"
-    fill_in "Content body", :with => "Impedit sed ea incidunt tenetur placeat est labore quia ut e."
+    fill_in "Comments", :with => "Impedit sed ea incidunt tenetur placeat est labore quia ut e."
     click_on "Create Review"
     expect(page).to have_content "Please fill in all form data correctly to add review"
   end
@@ -151,7 +151,7 @@ describe "delete review process" do
     click_link "Add Review for this Product"
     fill_in "Author", :with => "Tammy"
     fill_in "Rating", :with => 4 
-    fill_in "Content body", :with => "Impedit sed ea incidunt tenetur placeat est labore quia ut e."
+    fill_in "Comments", :with => "Impedit sed ea incidunt tenetur placeat est labore quia ut e."
     click_on "Create Review"
     click_link "Tammy"
     expect(page).to have_content "Impedit sed ea incidunt tenetur placeat est labore quia ut e."
