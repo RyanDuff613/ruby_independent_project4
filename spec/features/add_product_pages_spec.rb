@@ -26,9 +26,10 @@ describe "update product process" do
     fill_in "Country of origin", :with => "italy"
     fill_in "Cost", :with => 2.31
     click_on "Create Product"
-    click_on"Kale - $2.31"
+    visit products_path
+    click_link "Kale - $2.31"
+    click_link "Edit this Product"
     save_and_open_page
-    click_link_or_button "Edit this Product"
     fill_in "Cost", :with => 5.11
     click_on "Update Product"
     expect(page).to have_content "Kale - $5.11"
