@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  # before_action :authorize, only: []
+  before_action :authorize, only: [:new, :create, :edit, :update, :destroy]
 
   def landing
     @newest_3 = Product.newest_3
