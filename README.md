@@ -16,12 +16,7 @@ Users will need to install Ruby, Rails, psql and Postgres.
 After installing the above software, users will need to clone this project from my [github repository](https://github.com/RyanDuff613/ruby_independent_project4.git). Once cloned, use the command line to navigate to the project folder and install all necessary Ruby Gems with: 
 * _$ bundle install_
 In the command line, type the following commands which will launch a postgres server, connect to the server via psql and create the database necessary for the app to function and launch a server for interacting with the app.
-* _$ pg_ctl -D /usr/local/var/postgres start_
-* _$ psql postgres_
-* _$ createdb ruby_independent_project4_development_
-* _$ psql ruby_independent_project4_development < database_backup.sql_
-* _$ -T ruby_independent_project4_development volunteer_tracker_test_
-* _$ exit_
+
 Now open a web browser and enter localhost:3000 in the address bar to view the project.
 
 

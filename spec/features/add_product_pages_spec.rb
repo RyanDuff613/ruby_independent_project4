@@ -50,7 +50,6 @@ describe "delete product process" do
   end
 end
 
-
 describe "add review process" do
   it "adds a new review" do
     visit products_path
@@ -63,7 +62,7 @@ describe "add review process" do
     click_on "Review this Product"
     fill_in "Author", :with => "Tammy"
     fill_in "Rating", :with => 4 
-    fill_in "content_body", :with => "Impedit sed ea incidunt tenetur placeat est labore quia ut et animi nostrum commodi mollitia dolores beatae et ducimus nobis."
+    fill_in "content_body", :with => "Impedit sed ea incidunt tenetur placeat est labore quia ut e."
     click_on "Create Review"
     expect(page).to have_content "Thanks for adding your review"
     expect(page).to have_content "Tammy"
