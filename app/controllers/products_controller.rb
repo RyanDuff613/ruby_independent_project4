@@ -1,4 +1,5 @@
 class ProductsController < ApplicationController
+  # before_action :authorize, only: []
 
   def landing
     @newest_3 = Product.newest_3
@@ -48,7 +49,11 @@ class ProductsController < ApplicationController
 
   def destroy
     @product = Product.find(params[:id])
-    @product.destroy
+    if @product.destroy
+      flash[:notice] = "Product Deleted from Inventory"
+    else
+      flash[:notice] = "Fail: Product was not removed from Inventory"
+    end
     redirect_to products_path
   end
 
