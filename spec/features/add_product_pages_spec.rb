@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe "signup as admin process" do
-  it "allows user to create admin account"
+  it "allows user to create admin account" do
     visit products_path 
     click_link "Sign up"
     fill_in "Email", :with => "meme.com"
@@ -12,12 +12,18 @@ describe "signup as admin process" do
   end
 end
 
-# describe "the add product process" do
+describe "the add product process" do
 
   it"adds a new product" do
-    visit products_path
+    visit products_path 
+    click_link "Sign up"
+    fill_in "Email", :with => "meme.com"
+    fill_in "Password", :with => "123abc"
+    fill_in "Password confirmation", :with => "123abc"
+    click_button "Register as Admin"
+    visit products_path 
     click_link 'Add new product to inventory'
-    fill_in "Name", :with => "kale"
+    fill_in "Name:", :with => "kale"
     fill_in "Country of origin", :with => "italy"
     fill_in "Cost", :with => 2.30
     click_on "Create Product"
@@ -50,7 +56,7 @@ end
 #     click_on "Create Product"
 #     expect(page).to have_content "Product Not Added, All data must be entered in the form correctly."
 #   end
-# end
+end
 
 # describe "update product process" do 
 
