@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
       session[:user_id] = @user.id
       redirect_to '/'
     else  
-      flash[:alert] = "There was a problem signing in. Try again"
+      flash[:alert] = "There was a problem signing in. Try again or register as admin before signing in"
       redirect_to signin_path
     end
   end
