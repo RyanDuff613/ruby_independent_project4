@@ -11,7 +11,7 @@
   <% @product.reviews.each do |review| %>
     <ul>
       <li>
-        <%= link_to review.author, product_review_path(@product, review) %>
+          <a href="/products/<%= review.product_id %>/reviews/<%=review.id %>"><button><%= review.author %></button></a>
       </li>
     </ul>
   <% end %>
@@ -21,13 +21,15 @@
 
 <hr>
 <form method="get" action="/products/<%= @product.id %>/reviews/new">
-  <button>Review this Product</button>
+  <button>Add Review for this Product</button>
 </form>
-<form method="get" action="/products/<%= @product.id %>/edit">
-  <button>Edit this Product</button>
-</form>
-<%= link_to "Delete this product from inventory", product_path(@product),
-                                                                      :data => { :method => "delete"} %>
-<form method="get" action="/products">
-  <button>Return To Inventory</button>
-</form>
+<a href="/products/<%= @product.id %>/reviews/new"><button>Add Review for this Product</button></a>
+
+<a href="/products/<%= @product.id %>/edit"><button>Edit this Product</button></a>
+
+
+
+<%=button_to 'Delete', {:controller => :products, :action => 'destroy', :id => @product.id }, :method => :delete%>
+
+
+<a href="/products"><button>Return to Inventory</button></a>
