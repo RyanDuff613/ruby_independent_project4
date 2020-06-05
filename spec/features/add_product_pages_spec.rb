@@ -68,3 +68,22 @@ describe "add review process" do
     expect(page).to have_content "Tammy"
   end
 end
+
+describe "delete review process" do
+  it "deletes a review" do
+    visit products_path
+    click_link 'Add new product to inventory'
+    fill_in "Name", :with => "kale"
+    fill_in "Country of origin", :with => "italy"
+    fill_in "Cost", :with => 2.31
+    click_on "Create Product"
+    click_link "Kale - $2.31"
+    click_link "Add Review for this Product"
+    fill_in "Author", :with => "Tammy"
+    fill_in "Rating", :with => 4 
+    fill_in "Content body", :with => "Impedit sed ea incidunt tenetur placeat est labore quia ut e."
+    click_on "Create Review"
+    click_link "Tammy"
+    expect(page).to have_content "Impedit sed ea incidunt tenetur placeat est labore quia ut e."
+  end
+end
