@@ -11,8 +11,8 @@ class UsersController < ApplicationController
       session[:user_id] = @user.id 
       redirect_to '/'
     else  
-      flash[:alert] = "You are not signed in. Please try again"
-      redirect_to 'signup'
+      flash[:alert] = "Signup failed. Please try again. If you are already an Admin try Sign In instead."
+      redirect_to '/signup'
     end
   end
 

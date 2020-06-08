@@ -1,10 +1,11 @@
 <h4>Sign up as Admin</h4>
 
 <%= form_for @user do |f| %>
-  <label for="email">Email:
+  <%# <label for="email">Email: %>
+  <%= f.label :email %>
   <%= f.text_field :email %></label>
   <br>
-  <%= f.label "Password" %>
+  <%= f.label :password %>
   <%= f.password_field :password %>
   <br>
   <%= f.label :password_confirmation %>
