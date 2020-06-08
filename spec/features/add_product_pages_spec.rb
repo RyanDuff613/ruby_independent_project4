@@ -26,7 +26,7 @@ describe "sign out as admin process" do
 end
 
 describe "sign in as admin process" do
-  it "allows user to sign out as admin" do
+  it "allows user to sign in as admin" do
     visit products_path 
     click_link "Sign up"
     fill_in "Email", :with => "ryan@fake.com"
@@ -39,6 +39,17 @@ describe "sign in as admin process" do
     fill_in "Password", :with => "password"
     click_button "Sign in as Admin"
     expect(page).to have_content "You've signed in."
+  end
+end
+
+describe "sign in as admin process" do
+  it "rejects user if attempting to sign in user does not have admin credential" do
+    visit products_path 
+    click_link "Sign in"
+    fill_in "Email", :with => "ryan@fake.com"
+    fill_in "Password", :with => "password"
+    click_button "Sign in as Admin"
+    expect(page).to have_content "There was a problem signing in."
   end
 end
 
@@ -242,6 +253,7 @@ describe "add review process" do
   end
 
 end
+
 
 describe "delete review process" do
   it "deletes a review" do
