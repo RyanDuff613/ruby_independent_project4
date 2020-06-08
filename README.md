@@ -6,7 +6,7 @@
 #### Ryan Duff 
 
 ## Description
-This project is a browser based application that allows users to view food products available through Mario's Specialty Foods. Users enter Mario's landing page and are shown the three most recently added products and the product with the most reviews, along with a link to a list of all available products. Users are able to add, delete and edit the products list as well as the review list.
+This project is a browser based application that allows users to view food products available through Mario's Specialty Foods. Users enter Mario's landing page and are shown the three most recently added products and the product with the most reviews, along with a link to a list of all available products. Admins are able to add, delete and edit the products. Visitors are able to view product details and add reviews to products but are prevented from editing the inventory.
 
 
 ## Setup/Installation Requirements
