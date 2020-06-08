@@ -16,7 +16,7 @@
       <% if current_user %>
         <li class="navbarItem"><%= current_user.email %><%= link_to "Sign out", '/signout' %></li>
       <% else %>
-        <li class="navbarItem"><%= link_to "Sign up", '/signup' %> | <%= link_to "Sign in", '/signin' %></li>
+        <li class="navbarItem"><%= link_to "Sign up", '/signup' %><%= link_to "Sign in", '/signin' %></li>
       <% end %>
     </ul>
 
