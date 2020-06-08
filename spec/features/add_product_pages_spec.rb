@@ -21,8 +21,24 @@ describe "sign out as admin process" do
     fill_in "Password confirmation", :with => "password"
     click_button "Register as Admin"
     click_link "Sign out"
-    save_and_open_page
     expect(page).to have_content "You have signed out"
+  end
+end
+
+describe "sign in as admin process" do
+  it "allows user to sign out as admin" do
+    visit products_path 
+    click_link "Sign up"
+    fill_in "Email", :with => "ryan@fake.com"
+    fill_in "Password", :with => "password"
+    fill_in "Password confirmation", :with => "password"
+    click_button "Register as Admin"
+    click_link "Sign out"
+    click_link "Sign in"
+    fill_in "Email", :with => "ryan@fake.com"
+    fill_in "Password", :with => "password"
+    click_button "Sign in as Admin"
+    expect(page).to have_content "You've signed in."
   end
 end
 
