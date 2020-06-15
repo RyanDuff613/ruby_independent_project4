@@ -7,7 +7,14 @@ class Product < ApplicationRecord
   scope :newest_3, -> {order(created_at: :desc).limit(3)}
   scope :from_mexico, -> {where(country_of_origin: "Mexico")}
   scope :most_reviewed, -> {(
-    select ("products.id, count(reviews.id) as total_reviews")
+    # select ("products.name, product.name, count(reviews.id) as total_reviews")
+    # .joins(:reviews)
+    # .group("products.id")
+    # .order("total_reviews DESC")
+    # .limit(1)
+    # ------ Same statement, for use in Rails console
+    #  select("products.id, count(reviews.id) as total_reviews").joins(:reviews).group("products.id").order("total_reviews DESC").limit(1)
+    select("products.id, product.name, count(reviews.id) as total_reviews")
     .joins(:reviews)
     .group("products.id")
     .order("total_reviews DESC")

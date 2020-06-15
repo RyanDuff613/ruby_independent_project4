@@ -8,7 +8,7 @@ class Review < ApplicationRecord
   validates :rating, numericality: {only_integer: true}
   validates :rating, numericality: {greater_than: 0}
   validates :rating, numericality: {less_than: 6}
-  scope :most_reviews, -> {order(product_id: :)}
+  
 
   before_save(:titleize_author_name)
 
