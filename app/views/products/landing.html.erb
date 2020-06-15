@@ -27,10 +27,14 @@
     </ul>
 <% end %>
 
+
 <% if @most_reviewed %>
   <h4>Most Reviewed Product:</h4> 
-    <a href="/products/<%= @most_reviewed.id %>"><button><%= most_reviewed.name %></button></a>
+    <a href="/products/<%= @most_reviewed[0].id %>"><button><%= @most_reviewed[0].name %></button></a>
 <% end %>
+
+<br>
+<br>
 
   <a href="/products"><button>See all Products</button></a>
 
