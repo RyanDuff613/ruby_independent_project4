@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
+  before_action :authenticate_user!
   helper_method :current_user
 
   def current_user
@@ -8,9 +9,9 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  def authorize
+  def authenticate_user!
     if !current_user
-      flash[:alert] = "Restricted. Admin only"
+      flash[:alert] = "Restricted. Logged-in Users Only"
       redirect_to '/'
     end
   end

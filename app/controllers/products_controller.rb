@@ -1,5 +1,7 @@
 class ProductsController < ApplicationController
-  before_action :authorize, only: [:new, :create, :edit, :update, :destroy]
+    before_action :authenticate_user!, :except => [:landing] do
+      redirect_to sign_in_path unless current_user && current_user.admin
+    end
 
   def landing
     @newest_3 = Product.newest_3
