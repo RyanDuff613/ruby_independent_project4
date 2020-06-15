@@ -1,6 +1,8 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
-  before_action :authenticate_user!
+  before_action :authenticate_user!, :except => [:landing, :index] do
+    redirect_to signin_path unless current_user && current_user.admin
+  end
   helper_method :current_user
 
   def current_user

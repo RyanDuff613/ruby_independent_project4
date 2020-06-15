@@ -1,4 +1,7 @@
 class ReviewsController < ApplicationController
+  # before_action :authenticate_user!, :except => [:show] do
+  #   redirect_to signin_path unless current_user && current_user.admin
+  # end
 
   def new
     @product = Product.find(params[:product_id])
