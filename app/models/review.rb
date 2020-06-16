@@ -2,7 +2,9 @@ class Review < ApplicationRecord
   belongs_to :product
   validates :author, presence: true
   validates :rating, presence: true
-  validates :rating, numericality: {only_integer: true}, numericality: {greater_than: 0}, numericality: {less_than: 6}
+  validates :rating, numericality: {only_integer: true}
+  validates :rating, numericality: {greater_than: 0}
+  validates :rating, numericality: {less_than: 6}
   validates :content_body, presence: true
   validates_length_of :content_body, maximum: 250, minimum: 50
  
