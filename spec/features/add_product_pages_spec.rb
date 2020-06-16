@@ -53,74 +53,74 @@ require 'rails_helper'
 #   end
 # end
 
-# describe "the add product process" do
-#   it"adds a new product" do
-#     visit products_path 
-#     click_link "Sign up"
-#     fill_in "Email", :with => "meme.com"
-#     fill_in "Password", :with => "123abc"
-#     fill_in "Password confirmation", :with => "123abc"
-#     click_button "Register as Admin"
-#     visit products_path 
-#     click_link 'Add new product to inventory'
-#     fill_in "Name", :with => "kale"
-#     fill_in "Country of origin", :with => "italy"
-#     fill_in "Cost", :with => 2.30
-#     click_on "Create Product"
-#     expect(page).to have_content 'Product Successfully Added to Inventory'
-#   end
+describe "the add product process" do
+  it"adds a new product" do
+    visit products_path 
+    click_link "Sign up"
+    fill_in "Email", :with => "meme.com"
+    fill_in "Password", :with => "123abc"
+    fill_in "Password confirmation", :with => "123abc"
+    click_button "Register as Admin"
+    visit products_path 
+    click_link 'Add new product to inventory'
+    fill_in "Name", :with => "kale"
+    fill_in "Country of origin", :with => "italy"
+    fill_in "Cost", :with => 2.30
+    click_on "Create Product"
+    expect(page).to have_content 'Product Successfully Added to Inventory'
+  end
 
-#   it"rejects non-admin attempting to add product" do
-#     visit products_path 
-#     click_link 'Add new product to inventory'
-#     expect(page).to have_content 'Restricted. Admin only'
-#   end
+  # it"rejects non-admin attempting to add product" do
+  #   visit products_path 
+  #   click_link 'Add new product to inventory'
+  #   expect(page).to have_content 'Restricted. Admin only'
+  # end
 
-#   it "gives error when no name is entered" do
-#     visit products_path 
-#     click_link "Sign up"
-#     fill_in "Email", :with => "meme.com"
-#     fill_in "Password", :with => "123abc"
-#     fill_in "Password confirmation", :with => "123abc"
-#     click_button "Register as Admin"
-#     visit new_product_path
-#     click_on 'Create Product'
-#     fill_in "Country of origin", :with => "italy"
-#     fill_in "Cost", :with => 2.30
-#     click_on "Create Product"
-#     expect(page).to have_content "Product Not Added, All data must be entered in the form correctly."
-#   end
+  # it "gives error when no name is entered" do
+  #   visit products_path 
+  #   click_link "Sign up"
+  #   fill_in "Email", :with => "meme.com"
+  #   fill_in "Password", :with => "123abc"
+  #   fill_in "Password confirmation", :with => "123abc"
+  #   click_button "Register as Admin"
+  #   visit new_product_path
+  #   click_on 'Create Product'
+  #   fill_in "Country of origin", :with => "italy"
+  #   fill_in "Cost", :with => 2.30
+  #   click_on "Create Product"
+  #   expect(page).to have_content "Product Not Added, All data must be entered in the form correctly."
+  # end
 
-#   it "gives error when no country of origin is entered" do
-#     visit products_path 
-#     click_link "Sign up"
-#     fill_in "Email", :with => "meme.com"
-#     fill_in "Password", :with => "123abc"
-#     fill_in "Password confirmation", :with => "123abc"
-#     click_button "Register as Admin"
-#     visit new_product_path
-#     click_on 'Create Product'
-#     fill_in "Name", :with => "onions"
-#     fill_in "Cost", :with => 2.30
-#     click_on "Create Product"
-#     expect(page).to have_content "Product Not Added, All data must be entered in the form correctly."
-#   end
+  # it "gives error when no country of origin is entered" do
+  #   visit products_path 
+  #   click_link "Sign up"
+  #   fill_in "Email", :with => "meme.com"
+  #   fill_in "Password", :with => "123abc"
+  #   fill_in "Password confirmation", :with => "123abc"
+  #   click_button "Register as Admin"
+  #   visit new_product_path
+  #   click_on 'Create Product'
+  #   fill_in "Name", :with => "onions"
+  #   fill_in "Cost", :with => 2.30
+  #   click_on "Create Product"
+  #   expect(page).to have_content "Product Not Added, All data must be entered in the form correctly."
+  # end
 
-#   it "gives error when no price is entered" do
-#     visit products_path 
-#     click_link "Sign up"
-#     fill_in "Email", :with => "meme.com"
-#     fill_in "Password", :with => "123abc"
-#     fill_in "Password confirmation", :with => "123abc"
-#     click_button "Register as Admin"
-#     visit new_product_path
-#     click_on 'Create Product'
-#     fill_in "Name", :with => "onions"
-#     fill_in "Country of origin", :with => "italy"
-#     click_on "Create Product"
-#     expect(page).to have_content "Product Not Added, All data must be entered in the form correctly."
-#   end
-# end
+  # it "gives error when no price is entered" do
+  #   visit products_path 
+  #   click_link "Sign up"
+  #   fill_in "Email", :with => "meme.com"
+  #   fill_in "Password", :with => "123abc"
+  #   fill_in "Password confirmation", :with => "123abc"
+  #   click_button "Register as Admin"
+  #   visit new_product_path
+  #   click_on 'Create Product'
+  #   fill_in "Name", :with => "onions"
+  #   fill_in "Country of origin", :with => "italy"
+  #   click_on "Create Product"
+  #   expect(page).to have_content "Product Not Added, All data must be entered in the form correctly."
+  # end
+end
 
 # describe "update product process" do 
 #   it "updates a product price" do
