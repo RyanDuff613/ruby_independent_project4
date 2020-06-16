@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
-  before_action :authenticate_user!
+  before_action :authenticate_user!, :except => [:landing]
   
   helper_method :current_user
   helper_method :authenticate_admin
@@ -19,9 +19,9 @@ class ApplicationController < ActionController::Base
   end
 
   def authenticate_admin
-    if current_user && !current_user.admin
+    if !current_user.admin
       flash[:alert] = "Restricted. Admin only"
-      redirect_to '/'
+      redirect_to '/products'
     end
   end
 

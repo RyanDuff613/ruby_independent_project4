@@ -1,7 +1,7 @@
 class ProductsController < ApplicationController
-    skip_before_action :authenticate_user!, :only => [:landing]
+    # skip_before_action :authenticate_user!, :only => [:landing]
     before_action :authenticate_admin, :except => [:landing, :index, :show]
-    
+
   def landing
     @newest_3 = Product.newest_3
     @from_mexico = Product.from_mexico
