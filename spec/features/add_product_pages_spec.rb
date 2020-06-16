@@ -1,74 +1,74 @@
 require 'rails_helper'
 
-# describe "signup as admin process" do
-#   it "allows user to create admin account" do
+# describe "signup process" do
+#   it "allows user to create user account" do
 #     visit products_path 
 #     click_link "Sign up"
 #     fill_in "Email", :with => "ryan@fake.com"
 #     fill_in "Password", :with => "password"
 #     fill_in "Password confirmation", :with => "password"
-#     click_button "Register as Admin"
+#     click_button "Register as User"
 #     expect(page).to have_content "You are now signed in"
 #   end
 # end
 
-# describe "sign out as admin process" do
-#   it "allows user to sign out as admin" do
+# describe "sign out process" do
+#   it "allows user to sign out as user" do
 #     visit products_path 
 #     click_link "Sign up"
 #     fill_in "Email", :with => "ryan@fake.com"
 #     fill_in "Password", :with => "password"
 #     fill_in "Password confirmation", :with => "password"
-#     click_button "Register as Admin"
+#     click_button "Register as User"
 #     click_link "Sign out"
 #     expect(page).to have_content "You have signed out"
 #   end
 # end
 
-# describe "sign in as admin process" do
-#   it "allows user to sign in as admin" do
+# describe "sign in process" do
+#   it "allows user to sign in as user" do
 #     visit products_path 
 #     click_link "Sign up"
 #     fill_in "Email", :with => "ryan@fake.com"
 #     fill_in "Password", :with => "password"
 #     fill_in "Password confirmation", :with => "password"
-#     click_button "Register as Admin"
+#     click_button "Register as User"
 #     click_link "Sign out"
 #     click_link "Sign in"
 #     fill_in "Email", :with => "ryan@fake.com"
 #     fill_in "Password", :with => "password"
-#     click_button "Sign in as Admin"
+#     click_button "Sign in"
 #     expect(page).to have_content "You've signed in."
 #   end
 # end
 
-# describe "sign in as admin process" do
-#   it "rejects user if attempting to sign in user does not have admin credential" do
+# describe "sign in process" do
+#   it "rejects user if attempting to sign in without account" do
 #     visit products_path 
 #     click_link "Sign in"
 #     fill_in "Email", :with => "ryan@fake.com"
 #     fill_in "Password", :with => "password"
-#     click_button "Sign in as Admin"
+#     click_button "Sign in as User"
 #     expect(page).to have_content "There was a problem signing in."
 #   end
 # end
 
-describe "the add product process" do
-  it"adds a new product" do
-    visit products_path 
-    click_link "Sign up"
-    fill_in "Email", :with => "meme.com"
-    fill_in "Password", :with => "123abc"
-    fill_in "Password confirmation", :with => "123abc"
-    click_button "Register as Admin"
-    visit products_path 
-    click_link 'Add new product to inventory'
-    fill_in "Name", :with => "kale"
-    fill_in "Country of origin", :with => "italy"
-    fill_in "Cost", :with => 2.30
-    click_on "Create Product"
-    expect(page).to have_content 'Product Successfully Added to Inventory'
-  end
+# describe "the add product process" do
+#   it"adds a new product" do
+#     visit products_path 
+#     click_link "Sign up"
+#     fill_in "Email", :with => "meme.com"
+#     fill_in "Password", :with => "123abc"
+#     fill_in "Password confirmation", :with => "123abc"
+#     click_button "Register as User"
+#     visit products_path 
+#     click_link 'Add new product to inventory'
+#     fill_in "Name", :with => "kale"
+#     fill_in "Country of origin", :with => "italy"
+#     fill_in "Cost", :with => 2.30
+#     click_on "Create Product"
+#     expect(page).to have_content 'Product Successfully Added to Inventory'
+#   end
 
   # it"rejects non-admin attempting to add product" do
   #   visit products_path 
@@ -82,7 +82,7 @@ describe "the add product process" do
   #   fill_in "Email", :with => "meme.com"
   #   fill_in "Password", :with => "123abc"
   #   fill_in "Password confirmation", :with => "123abc"
-  #   click_button "Register as Admin"
+  #   click_button "Register as User"
   #   visit new_product_path
   #   click_on 'Create Product'
   #   fill_in "Country of origin", :with => "italy"
@@ -97,7 +97,7 @@ describe "the add product process" do
   #   fill_in "Email", :with => "meme.com"
   #   fill_in "Password", :with => "123abc"
   #   fill_in "Password confirmation", :with => "123abc"
-  #   click_button "Register as Admin"
+  #   click_button "Register as User"
   #   visit new_product_path
   #   click_on 'Create Product'
   #   fill_in "Name", :with => "onions"
@@ -112,7 +112,7 @@ describe "the add product process" do
   #   fill_in "Email", :with => "meme.com"
   #   fill_in "Password", :with => "123abc"
   #   fill_in "Password confirmation", :with => "123abc"
-  #   click_button "Register as Admin"
+  #   click_button "Register as User"
   #   visit new_product_path
   #   click_on 'Create Product'
   #   fill_in "Name", :with => "onions"
@@ -120,7 +120,7 @@ describe "the add product process" do
   #   click_on "Create Product"
   #   expect(page).to have_content "Product Not Added, All data must be entered in the form correctly."
   # end
-end
+# end
 
 # describe "update product process" do 
 #   it "updates a product price" do
@@ -129,7 +129,7 @@ end
 #     fill_in "Email", :with => "meme.com"
 #     fill_in "Password", :with => "123abc"
 #     fill_in "Password confirmation", :with => "123abc"
-#     click_button "Register as Admin"
+#     click_button "Register as User"
 #     click_link "See all Products"
 #     click_link 'Add new product to inventory'
 #     fill_in "Name", :with => "kale"
@@ -152,7 +152,7 @@ end
 #     fill_in "Email", :with => "meme.com"
 #     fill_in "Password", :with => "123abc"
 #     fill_in "Password confirmation", :with => "123abc"
-#     click_button "Register as Admin"
+#     click_button "Register as User"
 #     visit products_path
 #     click_link 'Add new product to inventory'
 #     fill_in "Name", :with => "kale"
@@ -173,7 +173,7 @@ end
 #     fill_in "Email", :with => "meme.com"
 #     fill_in "Password", :with => "123abc"
 #     fill_in "Password confirmation", :with => "123abc"
-#     click_button "Register as Admin"
+#     click_button "Register as User"
 #     visit products_path
 #     click_link 'Add new product to inventory'
 #     fill_in "Name", :with => "kale"
@@ -197,7 +197,7 @@ end
 #     fill_in "Email", :with => "meme.com"
 #     fill_in "Password", :with => "123abc"
 #     fill_in "Password confirmation", :with => "123abc"
-#     click_button "Register as Admin"
+#     click_button "Register as User"
 #     visit products_path
 #     click_link 'Add new product to inventory'
 #     fill_in "Name", :with => "kale"
@@ -219,7 +219,7 @@ end
 #     fill_in "Email", :with => "meme.com"
 #     fill_in "Password", :with => "123abc"
 #     fill_in "Password confirmation", :with => "123abc"
-#     click_button "Register as Admin"
+#     click_button "Register as User"
 #     visit products_path
 #     click_link 'Add new product to inventory'
 #     fill_in "Name", :with => "kale"
@@ -241,7 +241,7 @@ end
 #     fill_in "Email", :with => "meme.com"
 #     fill_in "Password", :with => "123abc"
 #     fill_in "Password confirmation", :with => "123abc"
-#     click_button "Register as Admin"
+#     click_button "Register as User"
 #     visit products_path
 #     click_link 'Add new product to inventory'
 #     fill_in "Name", :with => "kale"
@@ -267,7 +267,7 @@ end
 #     fill_in "Email", :with => "meme.com"
 #     fill_in "Password", :with => "123abc"
 #     fill_in "Password confirmation", :with => "123abc"
-#     click_button "Register as Admin"
+#     click_button "Register as User"
 #     visit products_path
 #     click_link 'Add new product to inventory'
 #     fill_in "Name", :with => "kale"
@@ -291,7 +291,7 @@ end
 #     fill_in "Email", :with => "meme.com"
 #     fill_in "Password", :with => "123abc"
 #     fill_in "Password confirmation", :with => "123abc"
-#     click_button "Register as Admin"
+#     click_button "Register as User"
 #     visit products_path
 #     click_link 'Add new product to inventory'
 #     fill_in "Name", :with => "kale"
