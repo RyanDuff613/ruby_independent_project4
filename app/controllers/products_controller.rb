@@ -2,7 +2,7 @@ class ProductsController < ApplicationController
     # before_action :authenticate_user!, :except => [:landing] do
     #   redirect_to signin_path unless current_user && current_user.admin
     # end
-    skip_before_action :authenticate_user!, :only => [:landing, :index]
+    # skip_before_action :authenticate_user!, :only => [:landing, :index]
 
   def landing
     @newest_3 = Product.newest_3
@@ -18,7 +18,7 @@ class ProductsController < ApplicationController
 
   def new
     @product = Product.new
-    render:new
+    render :new
   end
 
   def create

@@ -1,5 +1,9 @@
 class SessionsController < ApplicationController
 
+  def new
+    render :new
+  end
+
   def create
     @user = User.authenticate(params[:email], params[:password])
     if @user
@@ -14,7 +18,7 @@ class SessionsController < ApplicationController
 
   def destroy
     session[:user_id] = nil
-    flash[:notice] = "You have signed out"
+    flash[:notice] = "You've signed out"
     redirect_to '/'
   end
 
