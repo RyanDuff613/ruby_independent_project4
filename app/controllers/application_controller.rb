@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
   before_action :authenticate_user!
   
   helper_method :current_user
+  helper_method :authenticate_admin
 
   def current_user
     if session[:user_id]
@@ -18,7 +19,7 @@ class ApplicationController < ActionController::Base
   end
 
   def authenticate_admin
-    if current_user && current_user.admin
+    if current_user && !current_user.admin
       flash[:alert] = "Restricted. Admin only"
       redirect_to '/'
     end
