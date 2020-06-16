@@ -1,9 +1,7 @@
 class ProductsController < ApplicationController
-    # before_action :authenticate_user!, :except => [:landing] do
-    #   redirect_to signin_path unless current_user && current_user.admin
-    # end
-    # skip_before_action :authenticate_user!, :only => [:landing, :index]
-
+    skip_before_action :authenticate_user!, :only => [:landing]
+    before_action :authenticate_admin, :except => [:landing, :index, :show]
+    
   def landing
     @newest_3 = Product.newest_3
     @from_mexico = Product.from_mexico
