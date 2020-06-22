@@ -28,7 +28,7 @@
 <% end %>
 
 
-<% if @most_reviewed %>
+<% if @most_reviewed[0] %>
   <h4>Most Reviewed Product:</h4> 
     <ul>
       <li><a href="/products/<%= @most_reviewed[0].id %>"><button><%= @most_reviewed[0].name %></button></a></li>
